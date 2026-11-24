@@ -12,7 +12,9 @@ RUN GOOS=$TARGETOS GOARCH=$TARGETARCH GOARM=${TARGETVARIANT#v} CGO_ENABLED=0 XCA
     --with github.com/caddy-dns/cloudflare \
     --with github.com/WeidiDeng/caddy-cloudflare-ip \
     --with github.com/fvbommel/caddy-combine-ip-ranges \
-    --with github.com/mholt/caddy-ratelimit
+    --with github.com/fabriziosalmi/caddy-waf
+    # --with github.com/mholt/caddy-ratelimit
+    # --with github.com/ubiuser/caddy-geo-ops
 
 # Slim image: our own Alpine base (the official image minus its stock binary) with the
 # custom-built binary, so the image carries one Caddy binary instead of two. The builder
