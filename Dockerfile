@@ -10,8 +10,11 @@ ARG TARGETOS TARGETARCH TARGETVARIANT
 RUN GOOS=$TARGETOS GOARCH=$TARGETARCH GOARM=${TARGETVARIANT#v} CGO_ENABLED=0 XCADDY_PRINT_VERSION=0 \
     xcaddy build \
     --with github.com/caddy-dns/cloudflare \
-    --with github.com/WeidiDeng/caddy-cloudflare-ip \
-    --with github.com/fvbommel/caddy-combine-ip-ranges \
+    #--with github.com/tuzzmaniandevil/caddy-dynamic-clientip \
+    #--with github.com/monobilisim/caddy-ip-list \
+    --with github.com/sarumaj/caddy-cdn-ranges/v2 \
+    #--with github.com/WeidiDeng/caddy-cloudflare-ip \
+    #--with github.com/fvbommel/caddy-combine-ip-ranges \
     --with github.com/fabriziosalmi/caddy-waf
     # --with github.com/mholt/caddy-ratelimit
     # --with github.com/ubiuser/caddy-geo-ops
